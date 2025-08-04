@@ -1,3 +1,50 @@
+/**
+ * QuPath Export Script for InSituPy
+ * --------------------------------
+ * This script exports data from all named annotations in the current QuPath image.
+ * It performs the following tasks:
+ *
+ * 1. Validates that all annotations are named and uniquely identified.
+ * 2. Creates an export directory named after the current image inside the project folder.
+ * 3. Exports:
+ *    - All detected objects to a single GeoJSON file.
+ *    - All measurements to a TSV file.
+ *    - For each annotation:
+ *        - A cropped image region as OME-TIFF.
+ *        - The annotation geometry as GeoJSON.
+ *        - All child objects (e.g., cells) as GeoJSON.
+ *        - Measurements of child objects to a TSV file.
+ *
+ * Requirements:
+ *  - The script must be run within a QuPath project.
+ *  - All annotations must be named and have unique names.
+ *  - The image must be open and selected in QuPath.
+ *
+ * Output:
+ *  - A folder named after the image will be created inside a subfolder called "insitupy" in the project directory.
+ *  - Each annotation will have its own subfolder containing image data, geometry, and measurements.
+ *
+ * Notes:
+ *  - RGB images will be exported with interleaved channels.
+ *  - Multiplexed images will be exported with separate grayscale channels.
+ *  - Compression is set to ZLIB for OME-TIFF files.
+ *
+ * Example folder structure:
+ *  project/
+ *    └── insitupy/
+ *        └── ImageName/
+ *            ├── cells.geojson
+ *            ├── measurements.tsv
+ *            ├── Annotation1/
+ *            │   ├── image.ome.tif
+ *            │   ├── annotation.geojson
+ *            │   ├── cells.geojson
+ *            │   └── measurements.tsv
+ *            └── Annotation2/
+ *                ├── ...
+ */
+
+
 import qupath.lib.gui.tools.MeasurementExporter
 import qupath.lib.objects.PathCellObject
 import qupath.lib.images.writers.ome.OMEPyramidWriter

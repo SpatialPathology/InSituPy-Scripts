@@ -1,7 +1,38 @@
 /**
- * QuPath script to export OME-TIFF images for each annotation bounding box.
- * Compatible with QuPath v0.4.3+
+ * QuPath Annotation OME-TIFF Export Script
+ * ----------------------------------------
+ * This script exports cropped OME-TIFF images for each annotation in the currently opened image.
+ * Each annotation is exported as a separate image using its bounding box dimensions.
+ *
+ * Features:
+ *  - Automatically creates an export folder named `image_export` inside the current QuPath project.
+ *  - Exports each annotation as an OME-TIFF file with configurable compression and tiling.
+ *  - Handles both RGB and multiplexed grayscale images appropriately.
+ *  - Skips annotations that are unnamed and logs a warning.
+ *  - Sanitizes annotation names to ensure safe filenames.
+ *
+ * Requirements:
+ *  - QuPath v0.4.3 or newer.
+ *  - A QuPath project must be open.
+ *  - The current image must contain named annotations.
+ *
+ * Configuration:
+ *  - `fileSuffix`: File extension for exported images (default: `.ome.tif`)
+ *  - `tileSize`: Tile size for pyramid generation (default: 1024)
+ *  - `outputDownsample`: Downsampling factor for base resolution (default: 1)
+ *  - `pyramidScaling`: Scaling factor for pyramid levels (default: 2)
+ *  - `compression`: Compression type (default: ZLIB)
+ *
+ * Output:
+ *  - A folder named `image_export` will be created in the project directory.
+ *  - Each annotation will be exported as a separate OME-TIFF file named after the annotation.
+ *
+ * Notes:
+ *  - RGB images are exported with interleaved channels.
+ *  - Grayscale/multiplexed images are exported with separate channels.
+ *  - Annotation names are sanitized to avoid invalid characters in filenames.
  */
+
 
 import qupath.lib.images.writers.ome.OMEPyramidWriter
 import java.io.File
