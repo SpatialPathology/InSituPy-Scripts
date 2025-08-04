@@ -16,6 +16,32 @@ Included scripts:
 - [`export_images.groovy`](./scripts/export_images.groovy): Exports OME-TIFF images based on annotations.
 - [`export_annotations`](./scripts/export_annotations.groovy): Exports annotations as GEOJSON files.
 
+## 🚀 Getting Started
+
+To make the scripts easily accessible within QuPath:
+
+### 📁 Recommended Setup
+
+Download or clone this repository into the following location depending on your operating system:
+
+- **Windows:** `C:/Users/<your-username>/QuPath/scripts/InSituPy-QuPath`
+
+- **macOS:** `/Users/<your-username>/QuPath/scripts/InSituPy-QuPath`
+
+- **Linux:** `/home/<your-username>/QuPath/scripts/InSituPy-QuPath`
+
+Replace `<your-username>` with your actual system username.
+
+### ▶️ Accessing Scripts in QuPath
+
+1. Open **QuPath**.
+2. Go to: `Automate → Shared scripts...`
+3. You will see the scripts listed and ready to run from within the QuPath interface.
+
+This setup ensures the scripts are available across all QuPath projects and simplifies workflow integration.
+
+To run the scripts on a whole QuPath project, one can use `Run → Run for project` in the script editor.
+
 ---
 
 ## 📄 License
