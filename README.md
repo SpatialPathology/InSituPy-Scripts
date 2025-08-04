@@ -1,14 +1,14 @@
-# 🧬 InSituPy-Scripts
+# 🧬 InSituPy-QuPath
 
-This repository contains a collection of scripts designed to complement the use of InSituPy, a Python package for analyzing single-cell spatial transcriptomics and proteomics data.
+This repository contains a collection of scripts and documentation designed to connect [InSituPy](https://github.com/SpatialPathology/InSituPy) with [QuPath](https://qupath.github.io).
 
-The scripts are grouped by tool or language and serve various purposes such as data export, preprocessing, and integration.
+The scripts serve various purposes such as data export, preprocessing, and integration.
 
 ---
 
 ## 📂 Folder Overview
 
-### `qupath/`
+### `scripts/`
 Scripts written in Groovy for use with [QuPath](https://qupath.github.io). These scripts help export image data and annotations in formats compatible with InSituPy.
 
 Included scripts:
