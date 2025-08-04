@@ -9,7 +9,7 @@ The scripts serve various purposes such as data export, preprocessing, and integ
 ## 📂 Folder Overview
 
 ### `scripts/`
-Scripts written in Groovy for use with [QuPath](https://qupath.github.io). These scripts help export image data and annotations in formats compatible with InSituPy.
+Scripts written in Groovy for use with [QuPath](https://qupath.github.io). These scripts help export data in formats compatible with InSituPy.
 
 Included scripts:
 - `ExportToInSituPy.groovy`: Exports multiplexed IF data including cellular measurements, images as well as nuclear and cellular boundaries. Requires segmentation of cells using e.g. [InstanSeg](https://github.com/instanseg/instanseg). Exported data can be read using `read_qupath` or `read_qupath_project`.
